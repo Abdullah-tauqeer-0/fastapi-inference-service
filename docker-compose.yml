@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    container_name: fastapi-inference-service
+    ports:
+      - "8000:8000"
+    environment:
+      MODEL_VERSION: ${MODEL_VERSION:-v1}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+
